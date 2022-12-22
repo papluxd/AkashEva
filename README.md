@@ -3,7 +3,7 @@
 
 </p>
 <h1 align="center">
-  <b>Auto-Filter-V5</b>
+  <b>Master Akash</b>
 </h1>
 
 <b># Admin Commands

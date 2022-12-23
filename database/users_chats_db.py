@@ -1,6 +1,6 @@
 # https://github.com/odysseusmax/animated-lamp/blob/master/bot/database/database.py
 import motor.motor_asyncio
-from info import DATABASE_NAME, DATABASE_URI, IMDB, IMDB_TEMPLATE, MELCOW_NEW_USERS, P_TTI_SHOW_OFF, SINGLE_BUTTON, SPELL_CHECK_REPLY, PROTECT_CONTENT, AUTO_DELETE, AUTO_FFILTER, MAUTO_DELETE
+from info import DATABASE_NAME, DATABASE_URI, IMDB, IMDB_TEMPLATE, MELCOW_NEW_USERS, P_TTI_SHOW_OFF, SHORTLINK, SINGLE_BUTTON, SPELL_CHECK_REPLY, PROTECT_CONTENT, AUTO_DELETE, AUTO_FFILTER, MAUTO_DELETE
 
 class Database:
     
@@ -117,7 +117,8 @@ class Database:
             'auto_delete': AUTO_DELETE,
             'auto_ffilter': AUTO_FFILTER,
             'mauto_delete': MAUTO_DELETE,
-            'template': IMDB_TEMPLATE
+            'template': IMDB_TEMPLATE,
+            'shortlink', SHORTLINK
         }
         chat = await self.grp.find_one({'id':int(id)})
         if chat:

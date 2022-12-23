@@ -686,7 +686,11 @@ async def send_chatmsg(bot, message):
 
 @Client.on_message(filters.command('shortlink') & filters.user(ADMINS))
 async def shortlink(bot, message):
-    grp_id = message.text.split(" ", 1)[1]
+    grp_id = message.text
+    command = ["/shortlink"]
+    for cmd in command:
+        if cmd in grp_id:
+            grp_id = grp_id.replace(cmd, "")
     if not message.reply_to_message:
         return await message.reply_text(f"<b>Hey {message.from_user.mention}, Use this command as a reply to your link shortner api.</b>")
     elif grp_id == None or len(grp_id)<3:

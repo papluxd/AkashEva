@@ -699,6 +699,6 @@ async def shortlink(bot, message):
     reply = await message.reply_text("<b>Please wait...</b>")
     chat = await bot.get_chat(chat_id=int(grp_id))
     title = chat.title
-    link = message.reply_to_message
+    link = message.reply_to_message.text
     await save_group_settings(grp_id, 'shortlink', link)
     await reply.edit_text(f"<b>Successfully Added ShortLink API for {title} to <code>{link}</code>.</b>")

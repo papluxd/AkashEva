@@ -118,7 +118,7 @@ class Database:
             'auto_ffilter': AUTO_FFILTER,
             'mauto_delete': MAUTO_DELETE,
             'template': IMDB_TEMPLATE,
-            'shortlink', URL_SHORTNER_WEBSITE_API
+            'shortlink': URL_SHORTNER_WEBSITE_API
         }
         chat = await self.grp.find_one({'id':int(id)})
         if chat:

@@ -696,7 +696,7 @@ async def shortlink(bot, message):
     elif grp_id == None or len(grp_id)<3:
         return await message.reply_text("<b>Hey, Give me a group id along with the command as a reply to your link shortner api.\n\nFormat: /shortlink -1001*****</b>")
     reply = await message.reply_text("<b>Please wait...</b>")
-    chat = await client.get_chat(grp_id)
+    chat = await bot.get_chat(grp_id)
     title = chat.title
     link = message.reply_to_message
     await save_group_settings(grp_id, 'shortlink', link)

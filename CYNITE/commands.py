@@ -688,15 +688,12 @@ async def send_chatmsg(bot, message):
 async def shortlink(bot, message):
     r, grp_id = message.text.split(None, 1)
     if not message.reply_to_message:
-        return await message.reply_text(f"<b>Hey {message.from_user.mention}, Use this command as a reply to your link shortner api link.</b>")
+        return await message.reply_text(f"<b>Hey {message.from_user.mention}, Use this command as a reply to your link shortner api.</b>")
     elif grp_id == None or len(grp_id)<3:
-        return await message.reply_text("<b>Hey, Give me a group id along with the command as a reply to your link shortner api link.\n\nFormat: /shortlink -1001*****</b>")
+        return await message.reply_text("<b>Hey, Give me a group id along with the command as a reply to your link shortner api.\n\nFormat: /shortlink -1001*****</b>")
     reply = await message.reply_text("<b>Please wait...</b>")
     chat = await client.get_chat(grp_id)
     title = chat.title
     link = message.reply_to_message
     await save_group_settings(grp_id, 'shortlink', link)
-    await reply.edit_text(f"<b>Successfully Added ShortLink for {title} to <code>{link}</code>.</b>")
-    
-    
-    
+    await reply.edit_text(f"<b>Successfully Added ShortLink API for {title} to <code>{link}</code>.</b>")

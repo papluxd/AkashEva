@@ -437,16 +437,16 @@ Cʜᴇᴄᴋ Dᴏᴡɴ Tᴏ Vɪᴇᴡ.
 ⚙️ Fɪʟᴇ Sɪᴢᴇ :- {}</b>
 """
     TEMPLATE = """
-<b>📺 Movie Name: {query}
-🕺 ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ: {message.from_user.mention}
-👥 Group Name: {message.chat.title}
+<b>📺 ᎷϴᏙᏆᎬ ΝᎪᎷᎬ: {query}
+🕺 ᎡᎬϘႮᎬՏͲᎬᎠ ᏴᎽ: {message.from_user.mention}
+👥 ᏀᎡϴႮᏢ ΝᎪᎷᎬ: {message.chat.title}
 
 ᴛʜɪs ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇᴅ ᴀꜰᴛᴇʀ 2 minutes</b>
 """
     NOR_TEMPLATE = """
-<b>📺 Movie Name: {}
-🕺 ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ: {}
-👥 Group Name: {}
+<b>📺 ᎷϴᏙᏆᎬ ΝᎪᎷᎬ: {}
+🕺 ᎡᎬϘႮᎬՏͲᎬᎠ ᏴᎽ: {}
+👥 ᏀᎡϴႮᏢ ΝᎪᎷᎬ: {}
 
 ᴛʜɪs ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇᴅ ᴀꜰᴛᴇʀ 2 minutes</b>
 """

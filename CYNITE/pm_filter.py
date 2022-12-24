@@ -190,7 +190,7 @@ async def advantage_spoll_choker(bot, query):
     await query.answer(script.TOP_ALRT_MSG)
     k = await manual_filters(bot, query.message, text=movie)
     if k == False:
-        files, offset, total_results = await get_search_results(query.message.chat.id, movie, offset=0, filter=True)
+        files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
         if files:
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
@@ -1091,7 +1091,7 @@ async def auto_filter(client, msg, spoll=False):
                     await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
         except Exception as e:
             logger.exception(e)
-            fek = await message.reply_photo(photo=NOR_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+            fek = await message.reply_text(text=cap, reply_markup=InlineKeyboardMarkup(btn))
             try:
                 if settings['auto_delete']:
                     await asyncio.sleep(DELETE_TIME)
@@ -1106,7 +1106,7 @@ async def auto_filter(client, msg, spoll=False):
                     await fek.delete()
                     await message.delete()
     else:
-        fuk = await message.reply_photo(photo=NOR_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+        fuk = await message.reply_text(text=cap, reply_markup=InlineKeyboardMarkup(btn))
         try:
             if settings['auto_delete']:
                 await asyncio.sleep(DELETE_TIME)

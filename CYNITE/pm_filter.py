@@ -916,7 +916,7 @@ async def auto_filter(client, msg, spoll=False):
         search, files, offset, total_results = spoll
     pre = 'filep' if settings['file_secure'] else 'file'
     req = message.from_user.id if message.from_user else 0
-    if settings["button"] and msg.chat.id not in filters.chat(chats=SUPPORT_GROUP):
+    if settings["button"]:
         btn = [
             [
                 InlineKeyboardButton(
@@ -926,7 +926,6 @@ async def auto_filter(client, msg, spoll=False):
             ]
             for file in files
         ]
-    elif msg.chat.id in filters.chat(chats=SUPPORT_GROUP): return await message.reply_text(script.SGROUP_TXT.format(message.from_user.mention, total_results, search), disable_web_page_preview=True)
     else:
         btn = [
             [
@@ -1035,6 +1034,8 @@ async def auto_filter(client, msg, spoll=False):
         )
     else:
         try:
+            if message.chat.id in SUPPORT_GROUP:
+                return await message.reply_text(script.SGROUP_TXT.format(message.from_user.mention, total_results, search), disable_web_page_preview=True)
             if settings['auto_delete']:
                 cap = script.NOR_TEMPLATE.format(search, message.from_user.mention if message.from_user else message.chat.title, message.chat.title)
             else:

@@ -24,6 +24,7 @@ from typing import Union, Optional, AsyncGenerator
 from pyrogram import types
 LOGGER = logging.getLogger(__name__)
 TIMEZONE = (os.environ.get("TIMEZONE", "Asia/Kolkata"))
+import pytz
 
 class Bot(Client):
 

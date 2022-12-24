@@ -1036,17 +1036,17 @@ async def auto_filter(client, msg, spoll=False):
     else:
         try:
             if settings['auto_delete']:
-                cap = script.TEMPLATE
+                cap = script.NOR_TEMPLATE.format(search, message.from_user.mention if message.from_user else message.chat.title, message.chat.title)
             else:
-                cap = script.TEMPLATE
+                cap = script.NOR_TEMPLATE.format(search, message.from_user.mention if message.from_user else message.chat.title, message.chat.title)
         except KeyError:
             grpid = await active_connection(str(message.from_user.id))
             await save_group_settings(grpid, 'auto_delete', True)
             settings = await get_settings(message.chat.id)
             if settings['auto_delete']:
-                cap = script.CAP_DLT_TXT.format(search, message.from_user.mention if message.from_user else message.chat.title)
+                cap = script.NOR_TEMPLATE.format(search, message.from_user.mention if message.from_user else message.chat.title, message.chat.title)
             else:
-                cap = script.CAP_TXT.format(search, message.from_user.mention if message.from_user else message.chat.title)
+                cap = script.NOR_TEMPLATE.format(search, message.from_user.mention if message.from_user else message.chat.title, message.chat.title)
     if imdb and imdb.get('poster'):
         try:
             if settings['auto_delete']:

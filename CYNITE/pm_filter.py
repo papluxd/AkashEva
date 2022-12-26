@@ -34,10 +34,9 @@ BUTTONS = {}
 SPELL_CHECK = {}
 
 @Client.on_message(filters.private & filters.text & filters.incoming)
-async def pv_filter(client, message):
-    kd = await global_filters(client, message)
-    if kd == False:
-        await auto_filter(client, message)
+async def private_filter(client, message):
+    await global_filters(client, message)
+    await auto_filter(client, message)
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
@@ -49,7 +48,7 @@ async def give_filter(client, message):
             if settings['auto_ffilter']:
                 await auto_filter(client, message)
         except KeyError:
-            grpid = await active_connection(str(message.from_user.id))
+            grpid = message.chat.id
             await save_group_settings(grpid, 'auto_ffilter', True)
             settings = await get_settings(message.chat.id)
             if settings['auto_ffilter']:
@@ -487,7 +486,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
             
     elif query.data == "pages":
-        await query.answer(text=script.PAGEINFO, show_alert=True)
+        await query.answer(text=script.PAGEINFO)
 
     elif query.data == "reqinfo":
         await query.answer(text=script.REQINFO, show_alert=True)
@@ -523,7 +522,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about'),
                   ],[
-                    InlineKeyboardButton('Join My Channel', url="https://t.me/+bDVLuZipKUlkNjVl")
+                    InlineKeyboardButton('ᴊᴏɪɴ ғᴏʀ ᴜᴘᴅᴀᴛᴇs', url="https://t.me/+bDVLuZipKUlkNjVl")
                   ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -721,10 +720,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             )
     elif query.data == "cynite_cnl":
             cnlbtn = [[
-                      InlineKeyboardButton('ᴄʜᴀɴɴᴇʟ', url='https://t.me/+bDVLuZipKUlkNjVl')
+                      InlineKeyboardButton('ᴄʜᴀɴɴᴇʟ', url='https://t.me/Trickyakash5213')
                      ], [
-                      InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', url='https://t.me/+bDVLuZipKUlkNjVl'),
-                      InlineKeyboardButton('ᴜᴘᴅᴀᴛᴇs', url='https://t.me/+bDVLuZipKUlkNjVl')
+                      InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', url='https://t.me/Trickyakash5213'),
+                      InlineKeyboardButton('ᴜᴘᴅᴀᴛᴇs', url='https://t.me/Trickyakash5213')
                      ], [
                       InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="start")
                      ]]
@@ -1034,7 +1033,7 @@ async def auto_filter(client, msg, spoll=False):
         )
     else:
         try:
-            if message.chat.id in SUPPORT_GROUP:
+            if str(message.chat.id) == str(SUPPORT_GROUP):
                 return await message.reply_text(script.SGROUP_TXT.format(message.from_user.mention, total_results, search), disable_web_page_preview=True)
             if settings['auto_delete']:
                 cap = script.NOR_TEMPLATE.format(search, message.from_user.mention if message.from_user else message.chat.title, message.chat.title)
@@ -1189,9 +1188,9 @@ async def advantage_spell_chok(client, msg): #modified spell check
             await asyncio.sleep(600)
             await spell_check_del.delete()
     except KeyError:
-            grpid = await active_connection(str(message.from_user.id))
+            grpid = await active_connection(str(msg.from_user.id))
             await save_group_settings(grpid, 'auto_delete', True)
-            settings = await get_settings(message.chat.id)
+            settings = await get_settings(msg.chat.id)
             if settings['auto_delete']:
                 await asyncio.sleep(600)
                 await spell_check_del.delete()

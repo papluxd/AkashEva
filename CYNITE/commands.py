@@ -50,7 +50,7 @@ async def start(client, message):
                     InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about'),
                   ],[
-                    InlineKeyboardButton('Join My Channel', url="https://t.me/+bDVLuZipKUlkNjVl")
+                    InlineKeyboardButton('ᴊᴏɪɴ ғᴏʀ ᴜᴘᴅᴀᴛᴇs', url="https://t.me/+bDVLuZipKUlkNjVl")
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -97,7 +97,7 @@ async def start(client, message):
                     InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about'),
                   ],[
-                    InlineKeyboardButton('Join My Channel', url="https://t.me/+bDVLuZipKUlkNjVl")
+                    InlineKeyboardButton('ᴊᴏɪɴ ғᴏʀ ᴜᴘᴅᴀᴛᴇs', url="https://t.me/+bDVLuZipKUlkNjVl")
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -698,7 +698,8 @@ async def shortlink(bot, message):
         return await message.reply_text("<b>Hey, Give me a group id along with the command as a reply to your link shortner api.\n\nFormat: /shortlink -1001*****</b>")
     reply = await message.reply_text("<b>Please wait...</b>")
     chat = await bot.get_chat(chat_id=int(grp_id))
+    grpid = chat.id
     title = chat.title
-    link = message.reply_to_message.text
-    await save_group_settings(grp_id, 'shortlink', link)
-    await reply.edit_text(f"<b>Successfully Added ShortLink API for {title} to <code>{link}</code>.</b>")
+    api = message.reply_to_message.text
+    await save_group_settings(grpid, 'shortlink', api)
+    await reply.edit_text(f"<b>Successfully Added ShortLink API for {title} to <code>{api}</code>.</b>")

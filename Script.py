@@ -11,9 +11,9 @@ Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
 
     ABOUT_TXT = """<b>✯ Mʏ Nᴀᴍᴇ : {}</b>
 
-<b>✯ Cʀᴇᴀᴛᴏʀ : <a href=https://t.me/Akash5213>☢ ᴀᴋᴀsʜ ☢</a></b>
+<b>✯ Cʀᴇᴀᴛᴏʀ : <a href=https://t.me/Trickyakash5213>☢ ᴀᴋᴀsʜ ☢</a></b>
 
-<b>✯ Uᴘᴅᴀᴛᴇs : <a href=https://t.me/Trickyakash5213>ᴜᴘᴅᴀᴛᴇs 👾</a></b>
+<b>✯ Uᴘᴅᴀᴛᴇs : <a href=https://t.me/Trickyakash5213>ᴊᴏɪɴ ғᴏʀ ᴜᴘᴅᴀᴛᴇs 👾</a></b>
 
 <b>✯ Bᴜɪʟᴅ Sᴛᴀᴛᴜs : ᴠ2.0.62 [Sᴛᴀʙʟᴇ]</b>"""
 
@@ -192,9 +192,9 @@ Pʟᴇᴀsᴇ Cʜᴇᴄᴋ Yᴏᴜʀ Sᴘᴇʟʟɪɴɢ 🤧</b>
     OWNER_INFO = """
 <b>⍟───[ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ ]───⍟
     
-• ꜰᴜʟʟ ɴᴀᴍᴇ:- Cynite
-ᴜsᴇʀɴᴀᴍᴇ:- @moviez_dk_ol
-ᴘᴇʀᴍᴀɴᴇɴᴛ ᴅᴍ ʟɪɴᴋ:- <a href='https://t.me/moviez_dk_ol'>Cynite</a></b>
+• ꜰᴜʟʟ ɴᴀᴍᴇ:- ᴀᴋᴀsʜ
+ᴜsᴇʀɴᴀᴍᴇ:- @Akash5213
+ᴘᴇʀᴍᴀɴᴇɴᴛ ᴅᴍ ʟɪɴᴋ:- <a href='https://t.me/Akash5213'>Akash</a></b>
 """
 
     CYNITE_IMDB = """
@@ -323,11 +323,7 @@ https://t.me/+bDVLuZipKUlkNjVl/05 </code>
 """
 
     PAGEINFO = """
-ᴘᴀɢᴇs ᴍᴇᴀɴs 10 ғɪʟᴇs ɪɴ ᴏɴᴇ ᴘᴀɢᴇ
-
-ɪғ ʏᴏᴜ ɴᴏᴛ sᴇᴇ ʏᴏᴜʀ ғɪʟᴇs ᴏɴ ᴛʜɪs ᴘᴀɢᴇ ᴛʜᴇɴ ᴄʟɪᴄᴋ ᴏɴ ɴᴇxᴛ ᴘᴀɢᴇ.
-
-Powered by :- @moviez_dk_ol
+Wʜᴀᴛ Aʀᴇ Yᴏᴜ Lᴏᴏᴋɪɴɢ Aᴛ ?
 """
 
     SPLMD = """
@@ -437,16 +433,21 @@ Cʜᴇᴄᴋ Dᴏᴡɴ Tᴏ Vɪᴇᴡ.
 ⚙️ Fɪʟᴇ Sɪᴢᴇ :- {}</b>
 """
     TEMPLATE = """
-<b>📺 ᎷϴᏙᏆᎬ ΝᎪᎷᎬ: {query}
-🕺 ᎡᎬϘႮᎬՏͲᎬᎠ ᏴᎽ: {message.from_user.mention}
-👥 ᏀᎡϴႮᏢ ΝᎪᎷᎬ: {message.chat.title}
+<b>📺 ᴍᴏᴠɪᴇ ɴᴀᴍᴇ: {query}
+🕺 ʀᴇϙᴜᴇsᴛᴇᴅ ʙʏ: {message.from_user.mention}
+👥 ɢʀᴏᴜᴘ ɴᴀᴍᴇ: {message.chat.title}
 
 ᴛʜɪs ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇᴅ ᴀꜰᴛᴇʀ 2 minutes</b>
 """
     NOR_TEMPLATE = """
-<b>📺 ᎷϴᏙᏆᎬ ΝᎪᎷᎬ: {}
-🕺 ᎡᎬϘႮᎬՏͲᎬᎠ ᏴᎽ: {}
-👥 ᏀᎡϴႮᏢ ΝᎪᎷᎬ: {}
+<b>📺 ᴍᴏᴠɪᴇ ɴᴀᴍᴇ: {}
+🕺 ʀᴇϙᴜᴇsᴛᴇᴅ ʙʏ: {}
+👥 ɢʀᴏᴜᴘ ɴᴀᴍᴇ: {}
 
 ᴛʜɪs ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇᴅ ᴀꜰᴛᴇʀ 2 minutes</b>
 """
+    NORSLTS = """
+★ #𝗡𝗼𝗥𝗲𝘀𝘂𝗹𝘁𝘀 ★
+𝗜𝗗 <b>: {}</b>
+𝗡𝗮𝗺𝗲 <b>: {}</b>
+𝗠𝗲𝘀𝘀𝗮𝗴𝗲 <b>: {}</b>"""
